@@ -79,22 +79,28 @@ func PrintList (p *LinkedList) {
         }
     }
 }
+
+func test (p *LinkedList) {
+    test_data := []int{1,2,3,0,-1,-2}
+    for _, item := range test_data[:3] {
+        AddToTail(p, item)
+    }
+    for _, item := range test_data[3:] {
+        AddToHead(p, item)
+    }
+    PrintList(p)
+    RemoveTail(p)
+    PrintList(p)
+    RemoveTail(p)
+    PrintList(p)
+    RemoveHead(p)
+    RemoveHead(p)
+    RemoveHead(p)
+    RemoveHead(p)
+    PrintList(p)
+}
+
 func main() {
     mylinked := LinkedList{}
-    AddToTail(&mylinked, 1)
-    AddToTail(&mylinked, 2)
-    AddToTail(&mylinked, 3)
-    AddToHead(&mylinked, 0)
-    AddToHead(&mylinked, -1)
-    AddToHead(&mylinked, -2)
-    PrintList(&mylinked)
-    RemoveTail(&mylinked)
-    PrintList(&mylinked)
-    RemoveTail(&mylinked)
-    PrintList(&mylinked)
-    RemoveHead(&mylinked)
-    RemoveHead(&mylinked)
-    RemoveHead(&mylinked)
-    RemoveHead(&mylinked)
-    PrintList(&mylinked)
+    test(&mylinked)
 }
