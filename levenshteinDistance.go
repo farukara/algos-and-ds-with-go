@@ -1,11 +1,11 @@
-package main
+package levenshteinDistance
 
 import (
     "fmt"
     "testing"
 )
 
-func main () {
+func main_ () {
     s1:="how are you"
     s2:="how old are you?"
     fmt.Println(Levenshtein(s1, s2))
@@ -58,31 +58,3 @@ func test_Levenshtein(t *testing.T) {
         t.Errorf("(saturday, sunday) = %d; want 3", distance)
     }
 }
-
-/* func test_Levenshtein_old () {
-    s1 := "saturday"
-    s2 :="sunday"
-    var distance int
-    distance = Levenshtein(s1, s2)
-    if distance == 3 {
-        fmt.Println("Distance is:", distance, ". Test PASSED")
-    } else {
-        fmt.Println("Returned:", distance, ", expecting: 3. Test !!!FAILED!!!.")
-    }
-    
-    fmt.Println()
-    s1 = "abc"
-    s2 ="bcd"
-    distance = Levenshtein(s1, s2)
-    if distance == 2 {
-        fmt.Println("Distance is:", distance, ". Test PASSED")
-    } else {
-        fmt.Println("Returned:", distance, ", expecting: 3. Test !!!FAILED!!!.")
-    }
-    func TestAbs(t *testing.T) {
-    got := Abs(-1)
-    if got != 1 {
-        t.Errorf("Abs(-1) = %d; want 1", got)
-    }
-}
-} */
